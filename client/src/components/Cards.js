@@ -3,12 +3,13 @@ import Card from './Card';
 
 class Cards extends Component {
   render() {
-    // return (
-    //   <div>
-    //     <Card />
-    //   </div>
-    // );
-    return this.props.cards.map(card => <Card key={card.id} card={card} />);
+    return (
+      <ul>
+        {this.props.cards.map(card => (
+          <Card styleClass='float: left' key={card.id} card={card} />
+        ))}
+      </ul>
+    );
   }
 }
 
