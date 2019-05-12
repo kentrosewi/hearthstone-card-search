@@ -64,10 +64,19 @@ class App extends Component {
         </div>
 
         <Cards cards={cards_name_sorted} />
+        <footer class='footer mt-auto py-3' style={footerStyle}>
+          <div class='container'>
+            <span class='text-black-50'>Created by Kent Rose, May 2019.</span>
+          </div>
+        </footer>
       </Fragment>
     );
   }
 }
+
+let footerStyle = {
+  backgroundColor: '#cac7c7'
+};
 
 let cardCustomImg = {
   display: 'block',
