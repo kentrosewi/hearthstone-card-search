@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 
       const cardsJSON = JSON.parse(body)
         .filter(
-          card => card.rarity.toLowerCase() === 'free' && card.id !== 'HERO_02b' // this id does not have an image, not a perfect solution
+          card => card.rarity.toLowerCase() === 'free' // this id does not have an image, not a perfect solution   && card.id !== 'HERO_02b'
         ) //TODO: take out and filter on UI side?
         .map(card => ({
           id: card.id,

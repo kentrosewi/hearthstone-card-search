@@ -24,9 +24,9 @@ class Search extends Component {
 
     return (
       <Fragment>
-        <div class='input-group input-group-lg'>
-          <div class='input-group-prepend'>
-            <span class='input-group-text' id='inputGroup-sizing-lg'>
+        <div className='input-group input-group-lg'>
+          <div className='input-group-prepend'>
+            <span className='input-group-text' id='inputGroup-sizing-lg'>
               Card Name
             </span>
           </div>
@@ -35,7 +35,7 @@ class Search extends Component {
             name='name'
             value={this.state.name}
             onChange={this.onChange}
-            class='form-control'
+            className='form-control'
             aria-label='Large'
             aria-describedby='inputGroup-sizing-sm'
           />

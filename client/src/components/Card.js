@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react';
 
 class Card extends PureComponent {
+  state = {
+    imageLoadError: false
+  };
+
   render() {
     const { thumbnailURI } = this.props.card;
 
@@ -14,7 +18,16 @@ class Card extends PureComponent {
             className='card-custom-img'
             style={cardCustomImg}
             src={thumbnailURI}
-            alt='Card image'
+            alt='Heathstone card'
+            onError={e => {
+              if (!this.state.imageLoadError) {
+                console.log('Card load error, getting default card back.');
+
+                e.target.src =
+                  'https://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png';
+                this.setState({ imageLoadError: true });
+              }
+            }}
           />
         </div>
       </div>
@@ -35,8 +48,7 @@ let cardCustomImg = {
 
 let cardCustom = {
   overflow: 'hidden',
-  boxShadow: '0 0 15px rgba(10, 10, 10, 0.3)',
-  backgroundColor: '#cac7c7'
+  backgroundColor: 'transparent'
 };
 
 let cardStyle = {

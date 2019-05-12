@@ -56,6 +56,7 @@ class App extends Component {
                 <img
                   style={cardCustomImg}
                   src='https://static1.squarespace.com/static/5b0cd5573e2d09d20a0823d5/t/5ba85229104c7b4a52b5e286/1537757753306/Hearthstone+Logo.png'
+                  alt='Hearthstone logo'
                 />
                 <Search setSearch={this.setSearch} />
               </div>
@@ -64,9 +65,11 @@ class App extends Component {
         </div>
 
         <Cards cards={cards_name_sorted} />
-        <footer class='footer mt-auto py-3' style={footerStyle}>
-          <div class='container'>
-            <span class='text-black-50'>Created by Kent Rose, May 2019.</span>
+        <footer className='footer mt-auto py-3' style={footerStyle}>
+          <div className='container'>
+            <span className='text-black-50'>
+              Created by Kent Rose, May 2019.
+            </span>
           </div>
         </footer>
       </Fragment>
