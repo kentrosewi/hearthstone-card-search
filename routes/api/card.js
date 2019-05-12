@@ -6,7 +6,7 @@ const router = express.Router();
 const API_ROUTE =
   'https://api.hearthstonejson.com/v1/30103/enUS/cards.collectible.json';
 const API_IMG_URL =
-  'http://wow.zamimg.com/images/hearthstone/cards/enus/original/';
+  'https://wow.zamimg.com/images/hearthstone/cards/enus/original/';
 const API_IMG_URL_EXT = '.png';
 
 // alternative image sources
