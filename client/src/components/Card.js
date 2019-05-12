@@ -6,25 +6,21 @@ class Card extends PureComponent {
   };
 
   render() {
-    const { thumbnailURI } = this.props.card;
+    const { thumbnailURI, name, id } = this.props.card;
 
     return (
-      <div className='col-md-6 col-lg-4 pb-3' style={cardStyle}>
-        <div
-          className='card card-custom border-white border-0'
-          style={cardCustom}
-        >
+      <div className='col-md-6 col-lg-4 pb-3'>
+        <div className='card border-0' style={cardCustom}>
           <img
-            className='card-custom-img'
             style={cardCustomImg}
             src={thumbnailURI}
-            alt='Heathstone card'
+            alt={`Name: ${name}, ID: ${id}.`}
             onError={e => {
+              // prevent infinite looping if backup image fails to load
               if (!this.state.imageLoadError) {
                 console.log('Card load error, getting default card back.');
 
-                e.target.src =
-                  'https://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png';
+                e.target.src = cardBackDefault;
                 this.setState({ imageLoadError: true });
               }
             }}
@@ -35,7 +31,10 @@ class Card extends PureComponent {
   }
 }
 
-let cardCustomImg = {
+const cardBackDefault =
+  'https://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png';
+
+const cardCustomImg = {
   display: 'block',
   marginLeft: 'auto',
   marginRight: 'auto',
@@ -46,14 +45,9 @@ let cardCustomImg = {
   maxWidth: '307px'
 };
 
-let cardCustom = {
+const cardCustom = {
   overflow: 'hidden',
   backgroundColor: 'transparent'
-};
-
-let cardStyle = {
-  //   paddingRight: '0px !important',
-  //   paddingLeft: '0px !important'
 };
 
 export default Card;

@@ -11,17 +11,6 @@ class Search extends Component {
   };
 
   render() {
-    // return (
-    //   <input
-    //     type='text'
-    //     name='name'
-    //     style={{ flex: '10', padding: '5px' }}
-    //     placeholder='Search card name'
-    //     value={this.state.name}
-    //     onChange={this.onChange}
-    //   />
-    // );
-
     return (
       <Fragment>
         <div className='input-group input-group-lg'>

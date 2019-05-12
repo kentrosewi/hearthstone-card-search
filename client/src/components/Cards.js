@@ -5,7 +5,7 @@ class Cards extends Component {
   render() {
     return (
       <div className='container'>
-        <div className='card-deck' style={cardDeckStyle}>
+        <div className='card-deck' style={cardDeckCustomStyle}>
           {this.props.cards.map(card => (
             <Card key={card.id} card={card} />
           ))}
@@ -15,7 +15,7 @@ class Cards extends Component {
   }
 }
 
-let cardDeckStyle = {
+const cardDeckCustomStyle = {
   paddingTop: '2em'
 };
 
