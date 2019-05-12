@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class Search extends Component {
   state = {
@@ -11,15 +11,36 @@ class Search extends Component {
   };
 
   render() {
+    // return (
+    //   <input
+    //     type='text'
+    //     name='name'
+    //     style={{ flex: '10', padding: '5px' }}
+    //     placeholder='Search card name'
+    //     value={this.state.name}
+    //     onChange={this.onChange}
+    //   />
+    // );
+
     return (
-      <input
-        type='text'
-        name='name'
-        style={{ flex: '10', padding: '5px' }}
-        placeholder='Search card name'
-        value={this.state.name}
-        onChange={this.onChange}
-      />
+      <Fragment>
+        <div class='input-group input-group-lg'>
+          <div class='input-group-prepend'>
+            <span class='input-group-text' id='inputGroup-sizing-lg'>
+              Card Name
+            </span>
+          </div>
+          <input
+            type='text'
+            name='name'
+            value={this.state.name}
+            onChange={this.onChange}
+            class='form-control'
+            aria-label='Large'
+            aria-describedby='inputGroup-sizing-sm'
+          />
+        </div>
+      </Fragment>
     );
   }
 }

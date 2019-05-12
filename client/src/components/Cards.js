@@ -4,13 +4,19 @@ import Card from './Card';
 class Cards extends Component {
   render() {
     return (
-      <ul>
-        {this.props.cards.map(card => (
-          <Card styleClass='float: left' key={card.id} card={card} />
-        ))}
-      </ul>
+      <div className='container'>
+        <div className='card-deck' style={cardDeckStyle}>
+          {this.props.cards.map(card => (
+            <Card key={card.id} card={card} />
+          ))}
+        </div>
+      </div>
     );
   }
 }
+
+let cardDeckStyle = {
+  paddingTop: '2em'
+};
 
 export default Cards;

@@ -29,12 +29,16 @@ router.get('/', (req, res) => {
       }
 
       const cardsJSON = JSON.parse(body)
-        .filter(card => card.rarity === 'FREE') //TODO: take out and filter on UI side?
+        .filter(
+          card => card.rarity.toLowerCase() === 'free' && card.id !== 'HERO_02b' // this id does not have an image, not a perfect solution
+        ) //TODO: take out and filter on UI side?
         .map(card => ({
           id: card.id,
           name: card.name,
           thumbnailURI:
-            'https://art.hearthstonejson.com/v1/render/latest/enUS/256x/' +
+            //'http://media.services.zam.com/v1/media/byName/hs/cards/enus/' +
+            //'https://art.hearthstonejson.com/v1/render/latest/enUS/256x/' +
+            'http://wow.zamimg.com/images/hearthstone/cards/enus/original/' +
             card.id +
             '.png'
         }));

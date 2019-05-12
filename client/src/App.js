@@ -49,12 +49,40 @@ class App extends Component {
 
     return (
       <Fragment>
-        <h1>Healthstone Free Card Search</h1>
-        <Search setSearch={this.setSearch} />
+        <div className='container'>
+          <div className='card-deck'>
+            <div className='col-lg-12 pb-3' style={cardStyle}>
+              <div className='card card-custom border-white border-0 bg-transparent'>
+                <img
+                  style={cardCustomImg}
+                  src='https://static1.squarespace.com/static/5b0cd5573e2d09d20a0823d5/t/5ba85229104c7b4a52b5e286/1537757753306/Hearthstone+Logo.png'
+                />
+                <Search setSearch={this.setSearch} />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <Cards cards={cards_name_sorted} />
       </Fragment>
     );
   }
 }
+
+let cardCustomImg = {
+  display: 'block',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+
+  width: '100%',
+  height: 'auto',
+
+  maxWidth: '1000px'
+};
+
+let cardStyle = {
+  //   paddingRight: '0px !important',
+  //   paddingLeft: '0px !important'
+};
 
 export default App;
